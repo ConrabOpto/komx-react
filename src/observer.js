@@ -1,4 +1,5 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 import ko from 'knockout';
 
 const reactiveMixin = {
@@ -98,7 +99,7 @@ export default function observer(componentClass) {
         !React.Component.isPrototypeOf(componentClass);
 
     if (isStatelessFunction) {
-        return observer(React.createClass({
+        return observer(createReactClass({
             displayName: componentClass.displayName || componentClass.name,
             contextTypes: componentClass.contextTypes,
             getDefaultProps() {

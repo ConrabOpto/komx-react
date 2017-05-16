@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const specialReactKeys = { children: true, key: true, ref: true };
 
-export default class Provider extends Component {
+export default class Provider extends React.Component {
 
     static contextTypes = {
         mobxStores: PropTypes.object,

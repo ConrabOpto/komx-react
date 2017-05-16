@@ -1,5 +1,5 @@
 import inject from './inject';
-import observe from './observe';
+import observer from './observer';
 import Provider from './provider';
 
-export { inject, observe, Provider };
+export { inject, observer, Provider };

@@ -6,12 +6,13 @@
                     "es2015": {
                         "modules": false
                     }
-                }]
+                }],
+                "stage-2"
             ],
             "plugins": ["external-helpers"]
         },
         "test": {
-            "presets": ["latest", "stage-2"],
+            "presets": ["latest", "stage-2", "react"],
             "plugins": ["transform-decorators-legacy"]
         }
     }
