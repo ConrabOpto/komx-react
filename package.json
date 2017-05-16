@@ -1,0 +1,44 @@
+{
+  "name": "komx-react",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "React bindings for komx.",
+  "main": "dist/komx-react.js",
+  "module": "dist/komx-react.es.js",
+  "scripts": {
+    "test": "jest --watch",
+    "build": "set BABEL_ENV=production&& rollup -c",
+    "dev": "set BABEL_ENV=production&& rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConrabOpto/komx-react"
+  },
+  "author": "Conrab Opto",
+  "peerDependencies": {
+    "knockout": "^3.4.0",
+    "react": "^15.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.38",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "create-react-class": "^15.5.3",
+    "eslint": "^3.19.0",
+    "hoist-non-react-statics": "^1.2.0",
+    "jest": "^19.0.2",
+    "jest-babel": "^1.0.1",
+    "jquery": "2.2.4",
+    "knockout": "^3.4.2",
+    "komx": "^0.0.6",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^3.2.2"
+  }
+}
