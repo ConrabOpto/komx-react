@@ -6,7 +6,7 @@
   "files": [
     "dist/"
   ],
-  "main": "dist/komx-react.js",
+  "main": "dist/komx-react.umd.js",
   "module": "dist/komx-react.es.js",
   "scripts": {
     "prepublish": "set BABEL_ENV=production&& rollup -c",
