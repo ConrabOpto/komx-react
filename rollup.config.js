@@ -15,11 +15,16 @@ export default {
             exclude: 'node_modules/**'
         })
     ],
-    external: ['knockout'],
-    globals: { knockout: 'ko' },
-    moduleName: 'komx',
+    external: ['knockout', 'react', 'prop-types', 'create-react-class'],
+    globals: {
+        knockout: 'ko',
+        react: 'React',
+        'prop-types': 'PropTypes',
+        'create-react-class': 'createReactClass'
+    },
+    moduleName: 'komx-react',
     targets: [
-        { dest: 'dist/komx.umd.js', format: 'umd' },
-        { dest: 'dist/komx.es.js', format: 'es' }
+        { dest: 'dist/komx-react.umd.js', format: 'umd' },
+        { dest: 'dist/komx-react.es.js', format: 'es' }
     ],
 };
