@@ -1,5 +1,4 @@
-import React from 'react';
-import createReactClass from 'create-react-class';
+import React, { Component } from 'react';
 import ko from 'knockout';
 
 const reactiveMixin = {
@@ -99,16 +98,13 @@ export default function observer(componentClass) {
         !React.Component.isPrototypeOf(componentClass);
 
     if (isStatelessFunction) {
-        return observer(createReactClass({
-            displayName: componentClass.displayName || componentClass.name,
-            contextTypes: componentClass.contextTypes,
-            getDefaultProps() {
-                return componentClass.defaultProps;
-            },
-            render() {
-                return componentClass.call(this, this.props, this.context);
-            }
-        }));
+        return observer(class extends Component {
+            static displayName = componentClass.displayName || componentClass.name;
+            static contextTypes = componentClass.contextTypes;
+            static propTypes = componentClass.propTypes;
+            static defaultProps = componentClass.defaultProps;
+            render() { return componentClass.call(this, this.props, this.context); }
+        });
     }
 
     const target = componentClass.prototype || componentClass;
@@ -116,7 +112,9 @@ export default function observer(componentClass) {
     ['componentWillMount', 'componentWillUnmount']
         .forEach(funcName => { patch(target, funcName); });
 
-    target.shouldComponentUpdate = reactiveMixin.shouldComponentUpdate;
+    if (!target.shouldComponentUpdate) {
+        target.shouldComponentUpdate = reactiveMixin.shouldComponentUpdate;
+    }
 
     return componentClass;
 }
