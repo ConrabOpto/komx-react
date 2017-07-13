@@ -12,7 +12,7 @@ import { observable, computed } from 'komx';
 import { observer } from 'komx-react';
 
 class Note {
-    @observable message = 'Hej';
+    @observable message = 'Remember to buy milk';
 }
 
 @observer
@@ -36,7 +36,7 @@ import { observer } from 'komx-react';
 import ko from 'knockout';
 
 function Note() {
-    this.message = ko.observable('hej');
+    this.message = ko.observable('Rember to buy milk');
 }
 
 @observer
