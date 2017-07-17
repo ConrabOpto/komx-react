@@ -15,12 +15,10 @@ export default {
             exclude: 'node_modules/**'
         })
     ],
-    external: ['knockout', 'react', 'prop-types', 'create-react-class'],
+    external: ['knockout', 'react'],
     globals: {
         knockout: 'ko',
-        react: 'React',
-        'prop-types': 'PropTypes',
-        'create-react-class': 'createReactClass'
+        react: 'React'
     },
     moduleName: 'komx-react',
     targets: [
