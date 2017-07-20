@@ -31,7 +31,9 @@ const reactiveMixin = {
                         self.$ko.computed.dispose();
 
                         if (typeof self.componentWillReact === 'function') {
-                            self.componentWillReact();
+                            ko.ignoreDependencies(function () {
+                                self.componentWillReact();
+                            });
                         }
 
                         React.Component.prototype.forceUpdate.call(self);
